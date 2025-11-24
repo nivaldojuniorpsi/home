@@ -10,19 +10,20 @@
         /* ESTILOS BASE */
         body {
             margin: 0;
-            padding-top: 60px; /* Espaço para o header fixo */
+            padding-top: 60px; 
             font-family: Arial, sans-serif;
             background-color: #f4f7f9; 
             color: #333;
             line-height: 1.6;
-            overflow-x: hidden; /* Previne rolagem horizontal */
+            /* CRUCIAL PARA RESPONSIVIDADE: Esconde qualquer estouro lateral */
+            overflow-x: hidden; 
         }
 
         /* ---------------------------------------------------- */
-        /* ESTILOS DO HEADER FIXO (Garantindo Fixação e Alinhamento) */
+        /* ESTILOS DO HEADER FIXO */
         /* ---------------------------------------------------- */
         .header-fixo {
-            position: fixed; /* GARANTE QUE ESTEJA SEMPRE FIXO NO TOPO */
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -31,27 +32,26 @@
             color: white;
             z-index: 1000;
             display: flex;
-            justify-content: space-between; /* Alinha H1 à esquerda e Menu à direita */
+            justify-content: space-between;
             align-items: center;
             padding: 0 20px;
-            box-sizing: border-box; /* Crucial para o padding não estourar a largura de 100% */
+            box-sizing: border-box;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         .header-fixo h1 {
             margin: 0;
             font-size: 1.5rem;
-            white-space: nowrap; /* Impede que o nome quebre a linha */
+            white-space: nowrap; 
         }
         
         .header-fixo p {
             display: none; 
         }
 
-        /* LINKS DO MENU: VISÍVEL E ALINHADO CORRETAMENTE NO DESKTOP */
         .menu-principal {
             display: flex; 
-            align-items: center; /* Alinha os links verticalmente no centro do header */
+            align-items: center;
         }
         .menu-principal a {
             color: white;
@@ -60,7 +60,6 @@
             transition: background-color 0.3s;
         }
 
-        /* BOTÃO HAMBÚRGUER: OCULTO POR PADRÃO (DESKTOP) */
         #btnMenu {
             display: none; 
             background: none;
@@ -72,18 +71,23 @@
         }
 
         /* ---------------------------------------------------- */
-        /* ESTILOS DO CONTEÚDO */
+        /* ESTILOS DO CONTEÚDO (Container) */
         /* ---------------------------------------------------- */
         .container {
             max-width: 800px;
+            /* Garante que o container use a largura total disponível no mobile */
+            width: 100%; 
             margin: 0 auto 40px auto; 
-            padding: 0 20px;
+            /* O padding lateral de 20px evita que o conteúdo cole nas bordas da tela */
+            padding: 0 20px; 
+            box-sizing: border-box;
         }
 
         .hero-image {
             display: block;
+            /* CRUCIAL: Imagens sempre com 100% de largura dentro do container */
             width: 100%;
-            max-width: 600px;
+            max-width: 600px; /* Limite de crescimento no desktop */
             height: auto;
             margin: 20px auto;
             border-radius: 8px;
@@ -103,29 +107,22 @@
         /* ---------------------------------------------------- */
         @media (max-width: 768px) {
             
-            /* OCULTA OS LINKS DE MENU NO CELULAR */
             .menu-principal {
                 display: none; 
                 flex-direction: column; 
-                position: absolute; /* Posição absoluta para descer abaixo do header fixo */
+                position: absolute;
                 top: 60px;
                 right: 0;
                 width: 100%;
                 background-color: #2a4d69; 
                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-                padding-bottom: 10px; /* Espaçamento no final do menu */
+                padding-bottom: 10px; 
             }
 
-            /* MOSTRA O BOTÃO HAMBÚRGUER NO CELULAR */
             #btnMenu {
                 display: block; 
             }
             
-            .menu-principal a {
-                border-top: 1px solid #1e3a51;
-            }
-
-            /* CLASSE DE ATIVAÇÃO: REVELA O MENU QUANDO O BOTÃO É CLICADO */
             .menu-ativo {
                 display: flex !important;
             }
@@ -159,14 +156,7 @@
         
         <img src="nivaldo.jpg"
             class="hero-image"
-            alt="CRP 09-016675"
-            style="
-                display: block;
-                margin: 20px auto;
-                width: 100%;
-                max-width: 600px;
-                height: auto;
-            ">
+            alt="CRP 09-016675">
 
         <img src="logo.png" alt="Nivaldo José da Cunha Júnior" class="hero-image">
 
