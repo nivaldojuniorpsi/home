@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre | Nivaldo Júnior Psicólogo</title>
-    <!-- Inclui o CDN do Tailwind CSS para estilização moderna e responsiva -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Estilos base do corpo, ajustando o padding para o header fixo */
@@ -69,39 +68,32 @@
 
         p {
             text-align: justify; /* Mantém o texto principal justificado */
-            margin-top: 15px;
+            /* Estas margens garantem o espaçamento entre os parágrafos. */
+            margin-top: 15px; 
             margin-bottom: 15px;
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- NOVO CABEÇALHO FIXO COM TAILWIND CSS -->
     <header class="fixed top-0 left-0 w-full bg-[#2a4d69] text-white shadow-lg z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <!-- Título do Site -->
             <a href="https://nivaldojuniorpsi.github.io/home/home.html" class="text-xl font-bold">Nivaldo Júnior</a>
             
-            <!-- Menu Principal (Desktop) -->
             <nav class="hidden md:flex space-x-4">
                 <a href="https://nivaldojuniorpsi.github.io/home/home.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-[#2a4d69] transition duration-150">Home</a>
-                <!-- Link Absoluto para o Blog -->
                 <a href="https://nivaldojuniorpsi.github.io/home/blog.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-[#2a4d69] transition duration-150">Blog</a>
-                <!-- Link Ativo para a própria página 'Sobre' -->
                 <a href="https://nivaldojuniorpsi.github.io/home/sobre.html" class="px-3 py-2 rounded-md text-sm font-medium bg-[#4A80A4] text-white">Sobre</a>
                 <a href="#" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-[#2a4d69] transition duration-150">Contatos</a>
             </nav>
 
-            <!-- Botão do Menu Hamburguer (Mobile) -->
             <button id="menu-button" type="button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:text-[#2a4d69] hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white transition duration-150" aria-controls="mobile-menu" aria-expanded="false">
-                <!-- Ícone Menu -->
                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
         </div>
         
-        <!-- Menu Mobile (oculto por padrão) -->
         <div class="hidden md:hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="https://nivaldojuniorpsi.github.io/home/home.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-[#2a4d69] transition duration-150">Home</a>
@@ -112,19 +104,18 @@
         </div>
     </header>
 
-    <!-- CONTEÚDO PRINCIPAL (mantido o layout original da página 'Sobre') -->
     <div class="container">
         <div class="card">
-            <!-- CONTEÚDO RELOCADO DO HEADER ORIGINAL -->
             <img src="nivaldo.jpg" class="foto-perfil" alt="Foto de perfil">
             <h1>Nivaldo Júnior</h1>
             <h2>Psicólogo • Atendimento Online para Brasileiros na Europa</h2>
-            <!-- FIM DA RELOCAÇÃO -->
-
             <h3>Sobre meu trabalho</h3>
             <p>
                 Sou psicólogo e trabalho com uma abordagem séria, centrada na escuta e na compreensão
-                profunda da experiência humana. Atendo brasileiros que vivem na Europa e buscam
+                profunda da experiência humana.
+            </p>
+            <p>
+                Atendo brasileiros que vivem na Europa e buscam
                 acolhimento, estabilidade emocional e espaço para reflexão.
             </p>
 
@@ -147,7 +138,6 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT: Lógica para o Menu Responsivo -->
     <script>
         const menuButton = document.getElementById('menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
