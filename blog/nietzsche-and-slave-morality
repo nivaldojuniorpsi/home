@@ -1,1 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Inconsciente e a Linguagem | Nivaldo Júnior Psicólogo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Estilos customizados */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7f9;
+            padding-top: 64px;
+        }
+        
+        /* Estilização para o conteúdo do artigo */
+        .article-content h2, .article-content h3 {
+            color: #2a4d69;
+            font-weight: bold;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e1e5ec;
+        }
 
+        .article-content h2 {
+            font-size: 1.875rem;
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+        }
+
+        .article-content p, .article-content ol {
+            margin-bottom: 1.25rem;
+            line-height: 1.75;
+            text-align: justify;
+            color: #4b5563;
+        }
+
+        /* Estilo para a fórmula LaTeX usando MathJax (simulação) */
+        .formula {
+            display: block;
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background-color: #f9fafb;
+            border-left: 5px solid #4A80A4;
+            color: #1f2937;
+        }
+
+        /* Estilo para a seção de Referências */
+        .references {
+            border-top: 2px solid #e1e5ec;
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+        }
+        .references p {
+            font-size: 0.875rem;
+            line-height: 1.4;
+            text-align: left;
+        }
+
+        /* NOVO: Estilo para destacar o texto enquanto é lido */
+        .speaking-highlight {
+            background-color: #ffe0b2; /* Laranja suave */
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="fixed top-0 left-0 w-full bg-[#2a4d69] text-white shadow-lg z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="https://nivaldojuniorpsi.github.io/home/index.html" class="text-xl font-bold">Nivaldo Júnior</a>
+            
+            <nav class="hidden md:flex space-x-4">
+                <a href="https://nivaldojuniorpsi.github.io/home/index.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-[#2a4d69] transition duration-150">Home</a>
+                <a href="https://nivaldojuniorpsi.github.io/home/blog.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-[#2a4d69] transition duration-150">Blog</a>
+                <a href="https://nivaldojuniorpsi.github.io/home/sobre.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-[#2a4d69] transition duration-150">Sobre</a>
+                <a href="#" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-[#2a4d69] transition duration-150">Contatos</a>
+            </nav>
+
+            <button id="menu-button" type="button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:text-[#2a4d69] hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white transition duration-150" aria-controls="mobile-menu" aria-expanded="false">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="https://nivaldojuniorpsi.github.io/home/index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-[#2a4d69] transition duration-150">Home</a>
+                <a href="https://nivaldojuniorpsi.github.io/home/blog.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-[#2a4d69] transition duration-150">Blog</a>
+                <a href="sobre.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-[#2a4d69] transition duration-150">Sobre</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-[#2a4d69] transition duration-150">Contatos</a>
+            </div>
+        </div>
+    </header>
+    
+    <main class="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg">
+
+            <header class="mb-8 pb-4 border-b border-gray-200">
+                <p class="text-sm text-gray-500 mb-2">Psicanálise e Psicolinguística | 26 de Novembro, 2025</p>
+                <h1 class="text-4xl font-extrabold text-[#2a4d69] leading-tight">
+                    O Inconsciente e a Linguagem: Pontos de Convergência
+                </h1>
+                <p class="mt-2 text-gray-600 italic">Por Nivaldo Júnior, Psicólogo</p>
+            </header>
+
+            <div class="flex justify-end mb-6">
+                <button id="tts-button" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-full shadow-md transition duration-200 flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.899a9 9 0 010 14.142M12 21V3m0 18a9 9 0 01-9-9h18a9 9 0 01-9 9z" /></svg>
+                    <span>Ouvir Artigo</span>
+                </button>
+            </div>
+            <div class="article-content" id="article-content">
+                
+                <h2>F. Nietzsche and his struggle against the slave morality</h2>
+                <p>The Romantic movement emerged in the 18th century, expressing intense emotion and a connection with nature. Romantic thinkers embraced melancholy as part of the human condition in the pursuit of beauty and truth.</p>
+
+<p>Nietzsche represented a counterpoint to the traditional ideas and any kind of idealization of life and suffering. He rejects elevating melancholy as a means of finding deeper meaning. Nietzsche promoted the idea of “affirmation of life,” instead of the glorification of suffering, passive reflection, or the romanticization of pain.</p>
+
+<p>Some authors, like Byron and Schopenhauer, often celebrated sorrow as a kind of noble experience. For Nietzsche, it was a trap, and people have to embrace the full potential of their existence. Instead of glorifying pain, Nietzsche sought to transcend it through strength, self-creation, and a rejection of the “slave morality.”</p>
+
+<p>Romantics usually saw beauty in suffering, while Nietzsche saw that it was something to overcome. For him, the slave morality arose from the oppressed, who, in the absence of power, created values to glorify weakness, humility and self-sacrifice. The Romantics redefined what is “good or evil” as a reaction to the condition of powerlessness. Instead of strength, assertiveness, or nobility being virtues, the oppressed began to view qualities like kindness, selflessness, and piety as virtuous.</p>
+
+<p>Many Romantic thinkers were influenced by the idea of the suffering artist or the tragic hero, seeing personal suffering and empathy as virtuous qualities. On the other hand, Nietzsche saw them as a form of weakness, as a barrier to personal growth and the creation of one’s own values.</p>
+
+<p>The Übermensch (the “Superman”) is someone who transcends this slave morality by creating their own meaning and embracing life’s challenges. For him, slave morality was a product of resentment toward the strong and powerful, while master morality was about embracing strength, power, and self-realization.</p>
+
+<p>In this sense, Master Morality reflects the strong, the creative, and the affirmation of life. These individuals create their own values based on strength, power and excellence, rejecting traditional moral codes that limit their potential.</p>
+
+<p>Nietzsche would likely see Hegel’s dialectical process as a form of “slave morality.” Nietzsche rejects pre-determined meanings, like traditional beliefs imposed by external forces, social norms, or philosophical systems that claim a universal truth or a fixed understanding of reality. For him, individuals must create their own meaning and values through their actions, desires, and willpower.</p>
+
+<p>In this sense, meaning is not given but made through self-overcoming, not bound by any external moral system or philosophy.</p>
+
+                <div class="references">
+                    <h2 class="!mt-8 !mb-4 !text-2xl !border-none">Referências Bibliográficas</h2>
+                    <ul>
+    <li>
+        <strong>NIETZSCHE, Friedrich.</strong> <em>Para a genealogia da moral: uma polêmica.</em> Tradução, notas e posfácio de Paulo César de Souza. São Paulo: Companhia das Letras, 2003.
+    </li>
+    <li>
+        <strong>NIETZSCHE, Friedrich.</strong> <em>Assim falou Zaratustra.</em> Tradução de Paulo César de Souza. Porto Alegre: L&PM, 2012.
+    </li>
+    <li>
+        <strong>SCHOPENHAUER, Arthur.</strong> <em>O mundo como vontade e representação.</em> Tradução de Jair Barboza. São Paulo: Editora Unesp, 2018.
+    </li>
+    <li>
+        <strong>BERMAN, Antoine.</strong> <em>O Romantismo Europeu: História e Poética.</em> 2. ed. São Paulo: Perspectiva, 2005.
+    </li>
+</ul>                </div>
+                
+            </div>
+            </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-6 mt-12">
+        <div class="max-w-7xl mx-auto">
+            &copy; 2025 Nivaldo Júnior. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script>
+        // Lógica do Menu Responsivo
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
+            menuButton.setAttribute('aria-expanded', !isExpanded);
+        });
+
+        // --- LÓGICA DO LEITOR DE TEXTO (TEXT-TO-SPEECH) OTIMIZADA ---
+        const ttsButton = document.getElementById('tts-button');
+        const articleContent = document.getElementById('article-content');
+        const synth = window.speechSynthesis;
+        let utterance = null;
+        let isSpeaking = false;
+        let articleTextData = [];
+
+        // FUNÇÃO OTIMIZADA: Tenta encontrar a voz mais natural disponível
+        function getPortugueseVoice() {
+            const voices = synth.getVoices();
+            // Filtra todas as vozes em Português (pt-BR ou pt-PT)
+            const ptVoices = voices.filter(voice => voice.lang.startsWith('pt-'));
+
+            if (ptVoices.length === 0) {
+                // Fallback: Se não houver vozes em português, usa a primeira voz do sistema
+                return voices[0];
+            }
+
+            // PRIORIDADE: Tenta encontrar vozes de alta qualidade (mais naturais)
+            const preferredVoice = ptVoices.find(voice => 
+                voice.name.includes('Google') || 
+                voice.name.includes('Premium') ||
+                voice.name.includes('Enhanced')
+            );
+            
+            // Retorna a voz preferida ou, se não houver, a primeira voz em português encontrada.
+            return preferredVoice || ptVoices[0];
+        }
+
+        // Função para coletar o texto relevante do artigo (inicializa apenas uma vez)
+        function initializeArticleText() {
+            if (articleTextData.length > 0) return;
+            
+            const textElements = articleContent.querySelectorAll('h2:not(.references h2), h3:not(.references h3), p, li');
+            
+            textElements.forEach(element => {
+                if (element.closest('.formula')) return;
+
+                let text = element.textContent.trim();
+                text = text.replace(/\*/g, '').replace(/\[.*\]/g, ''); 
+                
+                if (text.length > 0) {
+                    articleTextData.push({ element: element, text: text });
+                }
+            });
+        }
+
+        // Função para remover o destaque
+        function cleanupHighlight() {
+            document.querySelectorAll('.speaking-highlight').forEach(el => {
+                el.classList.remove('speaking-highlight');
+            });
+        }
+        
+        // Inicia a leitura do zero
+        function startSpeech() {
+            synth.cancel();
+            initializeArticleText();
+            
+            const voice = getPortugueseVoice();
+
+            if (!voice) {
+                console.warn("Nenhuma voz em Português encontrada. A leitura pode não funcionar ou usar uma voz incorreta.");
+            }
+
+            let currentIndex = 0;
+
+            function processNextSentence() {
+                if (currentIndex >= articleTextData.length) {
+                    // Terminou a leitura
+                    cleanupHighlight();
+                    isSpeaking = false;
+                    ttsButton.innerHTML = '<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.899a9 9 0 010 14.142M12 21V3m0 18a9 9 0 01-9-9h18a9 9 0 01-9 9z" /></svg><span>Ouvir Artigo</span>';
+                    return;
+                }
+
+                const data = articleTextData[currentIndex];
+                const textToSpeak = data.text;
+                
+                cleanupHighlight();
+                data.element.classList.add('speaking-highlight');
+                data.element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                utterance = new SpeechSynthesisUtterance(textToSpeak);
+                utterance.voice = voice;
+                utterance.lang = 'pt-BR';
+                utterance.rate = 1.0; 
+
+                utterance.onend = () => {
+                    currentIndex++;
+                    processNextSentence(); 
+                };
+
+                utterance.onerror = (event) => {
+                    console.error('SpeechSynthesisUtterance.onerror', event);
+                    currentIndex++;
+                    processNextSentence(); 
+                };
+
+                synth.speak(utterance);
+                
+                ttsButton.innerHTML = '<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9l2-2m0 0l2 2m-2-2v8m4 0a4 4 0 01-4 4H8m0-4a4 4 0 004-4V7" fill="currentColor"/></svg><span>Pausar Leitura</span>';
+                isSpeaking = true;
+            }
+            
+            processNextSentence();
+        }
+
+        // Função principal para falar/pausar/retomar
+        function toggleSpeech() {
+            if (synth.speaking) {
+                if (isSpeaking) {
+                    // Pausa
+                    synth.pause();
+                    isSpeaking = false;
+                    ttsButton.innerHTML = '<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.5 19l-9-7 9-7v14z" fill="currentColor"/></svg><span>Retomar Leitura</span>';
+                    
+                } else {
+                    // Retoma
+                    synth.resume();
+                    isSpeaking = true;
+                    ttsButton.innerHTML = '<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9l2-2m0 0l2 2m-2-2v8m4 0a4 4 0 01-4 4H8m0-4a4 4 0 004-4V7" fill="currentColor"/></svg><span>Pausar Leitura</span>';
+                }
+            } else {
+                // Inicia a leitura do zero
+                startSpeech();
+            }
+        }
+
+        // Anexa o evento de clique imediatamente
+        ttsButton.addEventListener('click', toggleSpeech);
+
+        // Cancelar a fala ao fechar ou sair da página
+        window.addEventListener('beforeunload', () => {
+            synth.cancel();
+            cleanupHighlight();
+        });
+        // --- FIM DA LÓGICA DO LEITOR DE TEXTO ---
+    </script>
+</body>
+</html>
