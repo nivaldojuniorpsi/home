@@ -94,7 +94,7 @@
         <div class="hidden md:hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="https://nivaldojuniorpsi.github.io/home/home.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-[#2a4d69] transition duration-150">Home</a>
-                <a href="https://nivaldojuniorpsi.github.io/home/blog.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-[#2a4d69] transition duration-150">Blog</a>
+                <a href="https://nivaldojuniorpsi.github.io/teste/blog.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-[#2a4d69] transition duration-150">Blog</a>
                 <a href="sobre.html" class="block px-3 py-2 rounded-md text-base font-medium bg-[#4A80A4] text-white">Sobre</a>
                 <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white hover:text-[#2a4d69] transition duration-150">Contatos</a>
             </div>
@@ -191,7 +191,7 @@
             menuButton.setAttribute('aria-expanded', !isExpanded);
         });
 
-        // --- LÓGICA DO LEITOR DE TEXTO (TEXT-TO-SPEECH) CORRIGIDA ---
+        // --- LÓGICA DO LEITOR DE TEXTO (TEXT-TO-SPEECH) OTIMIZADA ---
         const ttsButton = document.getElementById('tts-button');
         const articleContent = document.getElementById('article-content');
         const synth = window.speechSynthesis;
@@ -199,13 +199,26 @@
         let isSpeaking = false;
         let articleTextData = [];
 
-        // Função auxiliar para obter a voz em Português
+        // FUNÇÃO OTIMIZADA: Tenta encontrar a voz mais natural disponível
         function getPortugueseVoice() {
-            // O getVoices pode estar vazio inicialmente, mas o navegador pode carregá-las.
-            // Tentamos obter a lista de vozes sempre que necessário.
             const voices = synth.getVoices();
-            // Tenta encontrar uma voz em pt-BR, pt-PT ou usa a primeira disponível
-            return voices.find(voice => voice.lang.startsWith('pt-')) || voices[0];
+            // Filtra todas as vozes em Português (pt-BR ou pt-PT)
+            const ptVoices = voices.filter(voice => voice.lang.startsWith('pt-'));
+
+            if (ptVoices.length === 0) {
+                // Fallback: Se não houver vozes em português, usa a primeira voz do sistema
+                return voices[0];
+            }
+
+            // PRIORIDADE: Tenta encontrar vozes de alta qualidade (mais naturais)
+            const preferredVoice = ptVoices.find(voice => 
+                voice.name.includes('Google') || 
+                voice.name.includes('Premium') ||
+                voice.name.includes('Enhanced')
+            );
+            
+            // Retorna a voz preferida ou, se não houver, a primeira voz em português encontrada.
+            return preferredVoice || ptVoices[0];
         }
 
         // Função para coletar o texto relevante do artigo (inicializa apenas uma vez)
@@ -274,7 +287,6 @@
 
                 utterance.onerror = (event) => {
                     console.error('SpeechSynthesisUtterance.onerror', event);
-                    // Pula para a próxima frase em caso de erro
                     currentIndex++;
                     processNextSentence(); 
                 };
@@ -309,7 +321,7 @@
             }
         }
 
-        // CORREÇÃO CRÍTICA: Anexa o evento de clique imediatamente
+        // Anexa o evento de clique imediatamente
         ttsButton.addEventListener('click', toggleSpeech);
 
         // Cancelar a fala ao fechar ou sair da página
