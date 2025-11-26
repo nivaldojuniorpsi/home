@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Fale Conosco</title>
+    <!-- Carrega o Tailwind CSS para estilização -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Define a fonte Inter como padrão -->
+    <style>
+        /* Definindo as variáveis de cor para facilitar a manutenção */
+        :root {
+            /* Cor Principal (Novo: #2a4d69 - Azul Marinho) */
+            --color-primary: #2a4d69; 
+            /* Cor Secundária (Manutenção: #333 - Cinza Escuro para texto) */
+            --color-text-dark: #333; 
+            /* Cor de Fundo (Manutenção: #f3f5f7) */
+            --color-light-bg: #f3f5f7;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-light-bg);
+        }
+        
+        /* Estilos de foco personalizados usando a nova cor primária #2a4d69 */
+        .input-focus:focus {
+            ring: 2px;
+            ring-offset: 2px;
+            ring-offset-white: 1px;
+            ring-color: var(--color-primary);
+            border-color: var(--color-primary);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="min-h-screen flex items-center justify-center p-4 sm:p-8">
+        <!-- O container principal permanece branco (bg-white) para contraste com o fundo #f3f5f7 -->
+        <div class="max-w-4xl w-full bg-white shadow-xl rounded-2xl overflow-hidden md:flex">
+
+            <!-- Seção de Informações de Contato (Lado Esquerdo) - Cor #2a4d69 -->
+            <div class="md:w-1/3 p-6 sm:p-10 text-white flex flex-col justify-between" style="background-color: var(--color-primary);">
+                <div>
+                    <h2 class="text-3xl font-extrabold mb-4">Informações de Contato</h2>
+                    <p class="mb-6 opacity-90 text-gray-300">Prefere um contato direto? Aqui estão nossos canais principais.</p>
+
+                    <!-- Lista de Contatos -->
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <!-- Ícone de Email -->
+                            <svg class="w-6 h-6 mr-3 mt-1 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-2 4v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path></svg>
+                            <div>
+                                <h3 class="font-semibold text-lg">E-mail</h3>
+                                <p class="text-gray-400">contato@seuprojeto.com.br</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <!-- Ícone de Telefone -->
+                            <svg class="w-6 h-6 mr-3 mt-1 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.128a11.058 11.058 0 006.45 6.45l1.128-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            <div>
+                                <h3 class="font-semibold text-lg">Telefone / WhatsApp</h3>
+                                <p class="text-gray-400">(XX) 9XXXX-XXXX</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <!-- Ícone de Localização -->
+                            <svg class="w-6 h-6 mr-3 mt-1 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0L6.343 16.657a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <div>
+                                <h3 class="font-semibold text-lg">Endereço (Opcional)</h3>
+                                <p class="text-gray-400">Rua Exemplo, 123 - Cidade/UF, Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Call to action/Social media placeholder -->
+                <p class="text-sm mt-8 text-gray-400">Estamos prontos para ouvir sua mensagem!</p>
+            </div>
+
+            <!-- Seção do Formulário de Contato (Lado Direito) -->
+            <div class="md:w-2/3 p-6 sm:p-10">
+                <!-- Títulos e Textos na cor #333 -->
+                <h2 class="text-3xl font-extrabold mb-6" style="color: var(--color-text-dark);">Envie-nos uma Mensagem</h2>
+                <p class="mb-8" style="color: var(--color-text-dark);">Use o formulário abaixo para enviar sua dúvida ou sugestão. Responderemos o mais breve possível.</p>
+
+                <!-- O 'action' deve ser configurado para um endpoint de backend real (PHP, Node, etc.) -->
+                <form id="contactForm" action="#" method="POST" class="space-y-6">
+
+                    <!-- Campo Nome -->
+                    <div>
+                        <label for="name" class="block text-sm font-medium mb-1" style="color: var(--color-text-dark);">Seu Nome Completo</label>
+                        <input type="text" id="name" name="name" required
+                               class="input-focus block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 transition duration-150 ease-in-out">
+                    </div>
+
+                    <!-- Campo Email -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium mb-1" style="color: var(--color-text-dark);">Seu Melhor E-mail</label>
+                        <input type="email" id="email" name="email" required
+                               class="input-focus block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 transition duration-150 ease-in-out">
+                    </div>
+
+                    <!-- Campo Assunto (Opcional) -->
+                    <div>
+                        <label for="subject" class="block text-sm font-medium mb-1" style="color: var(--color-text-dark);">Assunto (Opcional)</label>
+                        <input type="text" id="subject" name="subject"
+                               class="input-focus block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 transition duration-150 ease-in-out">
+                    </div>
+
+                    <!-- Campo Mensagem -->
+                    <div>
+                        <label for="message" class="block text-sm font-medium mb-1" style="color: var(--color-text-dark);">Sua Mensagem</label>
+                        <textarea id="message" name="message" rows="4" required
+                                  class="input-focus block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 transition duration-150 ease-in-out"></textarea>
+                    </div>
+
+                    <!-- Botão de Envio - Cor #2a4d69 e Hover #333 -->
+                    <div>
+                        <button type="submit"
+                                class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-md text-sm font-medium text-white transition duration-150 ease-in-out"
+                                style="background-color: var(--color-primary);"
+                                onmouseover="this.style.backgroundColor=getComputedStyle(document.documentElement).getPropertyValue('--color-text-dark');" 
+                                onmouseout="this.style.backgroundColor=getComputedStyle(document.documentElement).getPropertyValue('--color-primary');"
+                        >
+                            Enviar Mensagem
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Mensagem de status (será mostrada via JavaScript após o envio) -->
+                <div id="statusMessage" class="mt-4 hidden p-3 rounded-lg text-center" role="alert"></div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Script para simular o envio do formulário e mostrar uma mensagem de sucesso -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão
+
+            const statusMessage = document.getElementById('statusMessage');
+            const form = event.target;
+            const submitButton = form.querySelector('button[type="submit"]');
+            
+            // Define as cores com base nas variáveis CSS (para o JavaScript)
+            const colorPrimary = getComputedStyle(document.documentElement).getPropertyValue('--color-primary');
+            const colorTextDark = getComputedStyle(document.documentElement).getPropertyValue('--color-text-dark');
+
+            // 1. Desabilita o botão e mostra um estado de carregamento
+            submitButton.textContent = 'Enviando...';
+            submitButton.disabled = true;
+            submitButton.style.backgroundColor = 'gray'; // Cor de carregamento neutra
+            submitButton.onmouseover = null;
+            submitButton.onmouseout = null;
+
+
+            // 2. Simulação de envio (em um site real, você faria aqui um fetch() para seu backend)
+            setTimeout(() => {
+                // 3. Mostra a mensagem de sucesso
+                statusMessage.textContent = 'Sua mensagem foi recebida com sucesso! Em breve entraremos em contato.';
+                // Mantendo as cores de status verde/vermelho padrão para clareza
+                statusMessage.classList.remove('hidden', 'bg-red-100', 'text-red-700');
+                statusMessage.classList.add('bg-green-100', 'text-green-700', 'block');
+
+                // 4. Limpa o formulário
+                form.reset();
+
+                // 5. Restaura o botão
+                submitButton.textContent = 'Enviar Mensagem';
+                submitButton.disabled = false;
+                submitButton.style.backgroundColor = colorPrimary;
+
+                // Restaura os eventos de mouseover/mouseout
+                submitButton.onmouseover = function() { this.style.backgroundColor = colorTextDark; };
+                submitButton.onmouseout = function() { this.style.backgroundColor = colorPrimary; };
+
+
+            }, 2000); // Espera 2 segundos para simular a requisição de rede
+        });
+    </script>
+
+</body>
+</html>
